@@ -1,11 +1,8 @@
-import React from "react";
-
 import { motion } from "framer-motion";
 import "react-vertical-timeline-component/style.min.css";
 import { styles } from "../style";
 import { experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
-import textVariant from "../utils/motion";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -55,9 +52,9 @@ const Experience = () => {
   return (
     <>
       <motion.div
-      initial={{ y: -200 }}
-      transition={{ duration: 1 }}
-      whileInView={{ y: 0, opacity: 1 }}
+        initial={{ y: -200 }}
+        transition={{ duration: 1 }}
+        whileInView={{ y: 0, opacity: 1 }}
         // variants={() => {
         //   textVariant("1");
         // }}

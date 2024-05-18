@@ -1,7 +1,4 @@
-import React from "react";
 import { styles } from "../style";
-import { ComputersCanvas } from "./canvas";
-import { motion } from "framer-motion";
 import Typewriter from "react-ts-typewriter";
 
 const Hero = () => {
@@ -22,18 +19,14 @@ const Hero = () => {
               <span className="text-[#496af0] "> Ehtasham Toor</span>
             </h1>
             <p className={`${styles.heroSubText} text-white-100 mt-2 `}>
-              A skilled MERN developer.
+              MERN Developer with 1 year+ of experience in the field and
               <br className="block sm:hidden" /> A tech Enthusiast and a fast
               learner to take on the challenges that gives me adrenaline shots.
             </p>
           </div>
           <div className="w-full h-auto flex justify-center text-orange-500 font-bold self-start text-3xl">
             <Typewriter
-              text={[
-                "<Love to Code/>",
-                "Enjoys saying hi to new tech",
-                "Fast learner",
-              ]}
+              text={["<Love to Code/>", "Enthusiast", "Fast learner"]}
               loop
               speed={100}
               cursor={false}

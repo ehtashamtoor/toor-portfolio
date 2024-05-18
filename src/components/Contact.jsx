@@ -5,17 +5,12 @@ import slideIn from "../utils/motion";
 import { SectionWrapper } from "../hoc";
 import { motion } from "framer-motion";
 import { EarthCanvas } from "./canvas";
-import emailjs from "@emailjs/browser";
 import { useForm } from "@formspree/react";
-import { Navigate, useNavigate } from "react-router-dom";
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const formRef = useRef();
   const [state, handleSubmit] = useForm("mjvqgzdn");
-  const navigate = useNavigate();
-
-  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;

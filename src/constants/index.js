@@ -30,6 +30,7 @@ import {
   threejs,
   netflix,
 } from "../assets";
+import nestjs from "../assets/tech/nestjs.svg";
 
 export const navLinks = [
   {
@@ -103,6 +104,10 @@ const technologies = [
     icon: nodejs,
   },
   {
+    name: "NestJs",
+    icon: nestjs,
+  },
+  {
     name: "MongoDB",
     icon: mongodb,
   },
@@ -122,10 +127,10 @@ const technologies = [
     name: "ExpressJs",
     icon: express,
   },
-  // {
-  //   name: "docker",
-  //   icon: docker,
-  // },
+  {
+    name: "docker",
+    icon: docker,
+  },
 ];
 
 const experiences = [
@@ -139,7 +144,7 @@ const experiences = [
       "Developing and maintaining web applications using React.js and other related technologies.",
       "Implementing responsive design and ensuring cross-browser compatibility.",
       "Developed many designs using tailwind, material UI, Bootstrap etc",
-      "Learnt backend there",
+      "Learnt Nodejs, Express, Mongodb",
     ],
   },
   {
@@ -147,11 +152,22 @@ const experiences = [
     company_name: "Netixsol",
     icon: netixsol,
     iconBg: "#E6DEDD",
-    date: "June 2023 - Present",
+    date: "July 2023 - December 2023",
     points: [
       "Making RestApi in mongodb, nodejs, express, and collaborating on different projects",
       "Learning new styling Frameworks like tailwind css, material UI",
       "Learnt Nextjs Framework by making full stack nextjs projects",
+    ],
+  },
+  {
+    title: "Associate Software Engineer(Team Lead)",
+    company_name: "Netixsol",
+    icon: netixsol,
+    iconBg: "#E6DEDD",
+    date: "Febuary 2024 - Present",
+    points: [
+      "Worked on multiple frameworks like Nestjs, Nextjs etc",
+      "Lead the Skillmatch Website (A platform for the recruitment Process)",
     ],
   },
 ];

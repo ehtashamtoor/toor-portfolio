@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import {
   Navbar,
   Hero,
@@ -6,12 +6,12 @@ import {
   Experience,
   Tech,
   Works,
-  Feedbacks,
   Contact,
   StarsCanvas,
 } from "./components";
 import { useEffect, useState } from "react";
 import DownloadCV from "./components/DownloadCV";
+import FixedIcons from "./components/ContactFixedIcons";
 
 function App() {
   let [isOpen, setIsOpen] = useState(false);
@@ -24,6 +24,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="relative bg-primary z-0">
+        <FixedIcons />
         <div className="bg-hero-pattern bg-cover bg-center bg-no-repeat">
           <Navbar />
           <Hero />
