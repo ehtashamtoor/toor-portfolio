@@ -164,10 +164,23 @@ const experiences = [
     company_name: "Netixsol",
     icon: netixsol,
     iconBg: "#E6DEDD",
-    date: "Febuary 2024 - Present",
+    date: "Febuary 2024 - August 2024",
     points: [
       "Worked on multiple frameworks like Nestjs, Nextjs etc",
       "Lead the Skillmatch Website (A platform for the recruitment Process)",
+    ],
+  },
+  {
+    title: "Software Engineer",
+    company_name: "Netixsol",
+    icon: netixsol,
+    iconBg: "#E6DEDD",
+    date: "August 2024 - Present",
+    points: [
+      "Leveraged Next.js for server-side rendering and static site generation, enhancing performance and SEO for dynamic and scalable front-end applications.",
+      "Utilized Next.js API routes to implement serverless functions, streamlining backend interactions and reducing server overhead.",
+      "Developed robust back-end services with NestJS, utilizing its modular architecture and dependency injection to create scalable and maintainable applications.",
+      "Learning new things always!",
     ],
   },
 ];
