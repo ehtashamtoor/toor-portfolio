@@ -9,6 +9,8 @@ import {
   restaurant,
   next,
   html,
+  langchainColor,
+  FastAPI,
   css,
   reactjs,
   redux,
@@ -63,6 +65,10 @@ const services = [
   {
     title: "MERN Developer",
     icon: MERN,
+  },
+  {
+    title: "AI Engineer",
+    icon: web,
   },
 ];
 
@@ -127,6 +133,14 @@ const technologies = [
     name: "docker",
     icon: docker,
   },
+  {
+    name: "Langchain",
+    icon: langchainColor,
+  },
+  {
+    name: "FastAPI",
+    icon: FastAPI,
+  },
 ];
 
 const experiences = [
@@ -156,7 +170,7 @@ const experiences = [
     ],
   },
   {
-    title: "Associate Software Engineer(Team Lead)",
+    title: "Associate Software Engineer",
     company_name: "Netixsol",
     icon: netixsol,
     iconBg: "#E6DEDD",
@@ -167,7 +181,7 @@ const experiences = [
     ],
   },
   {
-    title: "Software Engineer",
+    title: "Software Engineer(Team Lead)",
     company_name: "Netixsol",
     icon: netixsol,
     iconBg: "#E6DEDD",
@@ -176,7 +190,7 @@ const experiences = [
       "Leveraged Next.js for server-side rendering and static site generation, enhancing performance and SEO for dynamic and scalable front-end applications.",
       "Utilized Next.js API routes to implement serverless functions, streamlining backend interactions and reducing server overhead.",
       "Developed robust back-end services with NestJS, utilizing its modular architecture and dependency injection to create scalable and maintainable applications.",
-      "Learning new things always!",
+      "Continously upgrading to enhance my skills with AI",
     ],
   },
 ];

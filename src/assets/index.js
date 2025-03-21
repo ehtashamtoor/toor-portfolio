@@ -22,6 +22,8 @@ import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
 import express from "./tech/express.png";
 import next from "./tech/nextjs-icon.svg";
+import langchainColor from "./tech/langchainColor.png";
+import FastAPI from "./tech/FastAPI.png";
 
 import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
@@ -71,4 +73,6 @@ export {
   todoJS,
   restaurant,
   netflix,
+  langchainColor,
+  FastAPI,
 };
