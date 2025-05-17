@@ -258,32 +258,6 @@ const projects = [
     source_code_link: "https://github.com/ehtashamtoor/Netflix-clone-main",
   },
   {
-    name: "RestaurantLovers",
-    description:
-      "Welcome to RestaurantLovers, the ultimate destination for food enthusiasts! Our app brings together a delightful experience for both restaurants and customers. Restaurants can easily sign up, create custom categories, and showcase their mouthwatering food items. Meanwhile, customers can explore a wide array of restaurants, place orders effortlessly, and stay updated on their orders' status. Powered by Next.js, NextAuth for secure authentication, MongoDB for efficient data storage, and enhanced with the elegance of Tailwind CSS, RestaurantLovers is your go-to app for a seamless dining experience.",
-    tags: [
-      {
-        name: "nextjs",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "MongoDB",
-        color: "green-text-gradient",
-      },
-      {
-        name: "nextAuth",
-        color: "blue-text-gradient",
-      },
-    ],
-    image: restaurant,
-    liveUrl: "https://restaurantlovers-ehtashamtoor.vercel.app/",
-    source_code_link: "https://github.com/ehtashamtoor/restaurantlovers",
-  },
-  {
     name: "Covid 19 Tracker",
     description:
       "Get in-depth information about the total cases, recovered cases, and unfortunate deaths for each selected country in specific timeframes.Dynamic Bar graph display how the virus spread, the recovery trends, and the unfortunate loss of lives over time.",
