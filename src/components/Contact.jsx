@@ -54,7 +54,7 @@ const Contact = () => {
         }}
         className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
       >
-        <p className={styles.sectionSubText}>Get in Touch</p>
+        <p className={styles.sectionSubText}>Lets collaborate</p>
         <h3 className={styles.sectionHeadText}>Contact </h3>
         <h1 className="text-2xl text-green-500">
           {state.succeeded && "Email Sent! Will get back to You ASAP"}
@@ -72,6 +72,7 @@ const Contact = () => {
               name="name"
               value={form.name}
               onChange={handleChange}
+              required
               placeholder="What's your name?"
               className="bg-tertiary p-4 px-6 placeholder:text-secondary rounded-lg outline-none borders-none font-medium"
             />
@@ -83,6 +84,7 @@ const Contact = () => {
               type="email"
               name="email"
               value={form.email}
+              required
               onChange={handleChange}
               placeholder="xyx12@abc.com"
               className="bg-tertiary p-4 px-6 placeholder:text-secondary rounded-lg outline-none borders-none font-medium"
@@ -95,6 +97,7 @@ const Contact = () => {
               rows={7}
               name="message"
               value={form.message}
+              required
               onChange={handleChange}
               placeholder="Initiate a conversation by saying Hi"
               className="bg-tertiary p-4 px-6 placeholder:text-secondary rounded-lg outline-none borders-none font-medium"

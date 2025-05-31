@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 import { styles } from "../style";
 import { logo, menu, close } from "../assets";
@@ -32,8 +32,8 @@ const Navbar = () => {
               <li
                 key={link.id}
                 className={`${
-                  active === link.title ? "text-green-400" : "text-secondary"
-                } hover:text-green-400 text-[18px] font-medium`}
+                  active === link.title ? "text-white" : "text-secondary"
+                } hover:text-white text-[18px] font-medium`}
                 onClick={() => {
                   setActive(link.title);
                 }}
@@ -57,7 +57,7 @@ const Navbar = () => {
           <div
             className={`${
               !toggle ? "hidden" : "flex"
-            } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
+            } p-6 bg-tertiary absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
           >
             <motion.ul
               initial={{ y: -100 }}
@@ -70,8 +70,8 @@ const Navbar = () => {
                   <li
                     key={link.id}
                     className={`${
-                      active === link.title ? "text-green-400" : "text-black"
-                    } hover:text-green-400 text-[18px] font-medium`}
+                      active === link.title ? "text-white" : "text-black"
+                    } hover:text-white text-[18px] font-medium`}
                     onClick={() => {
                       setActive(link.title);
                       setToggle(!toggle);

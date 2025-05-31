@@ -6,7 +6,6 @@ import {
   javascript,
   typescript,
   express,
-  restaurant,
   next,
   html,
   langchainColor,
@@ -20,17 +19,17 @@ import {
   git,
   figma,
   docker,
-  meta,
   yorfy,
   gamica,
   netixsol,
-  shopify,
   covidImage,
   expenseTracker,
   coinflip,
   todoJS,
-  threejs,
   netflix,
+  langgraph,
+  statgpt,
+  skillmatch,
 } from "../assets";
 import nestjs from "../assets/tech/nestjs.svg";
 
@@ -49,25 +48,25 @@ export const navLinks = [
   },
   {
     id: "contact",
-    title: "Contact",
+    title: "Hire me!",
   },
 ];
 
 const services = [
+  // {
+  //   title: "Frontend Developer",
+  //   icon: mobile,
+  // },
+  // {
+  //   title: "Backend Developer",
+  //   icon: backend,
+  // },
   {
-    title: "Frontend Developer",
-    icon: mobile,
-  },
-  {
-    title: "Backend Developer",
-    icon: backend,
-  },
-  {
-    title: "MERN Developer",
+    title: "MERN Stack Developer",
     icon: MERN,
   },
   {
-    title: "AI Engineer",
+    title: "Agentic AI Developer",
     icon: web,
   },
 ];
@@ -113,10 +112,10 @@ const technologies = [
     name: "MongoDB",
     icon: mongodb,
   },
-  // {
-  //   name: "Three JS",
-  //   icon: threejs,
-  // },
+  {
+    name: "Langgraph",
+    icon: langgraph,
+  },
   {
     name: "git",
     icon: git,
@@ -133,10 +132,10 @@ const technologies = [
     name: "docker",
     icon: docker,
   },
-  {
-    name: "Langchain",
-    icon: langchainColor,
-  },
+  // {
+  //   name: "Langchain",
+  //   icon: langchainColor,
+  // },
   {
     name: "FastAPI",
     icon: FastAPI,
@@ -223,6 +222,82 @@ const testimonials = [
 ];
 
 const projects = [
+  {
+    name: "Stat GPT",
+    description: `Sports Agent – by Netixsol,
+      A conversational sports chatbot that answers user queries about NBA, AFL, AFLW, UFC, and Cricket. Built using LangGraph, its basically an SQL agent that provides insights on these games.`,
+    tags: [
+      {
+        name: "python",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "langchain",
+        color: "green-text-gradient",
+      },
+      {
+        name: "langgraph",
+        color: "green-text-gradient",
+      },
+      {
+        name: "postgresql",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "Fastapi",
+        color: "green-text-gradient",
+      },
+    ],
+    image: statgpt,
+    liveUrl: "https://stage.statbreak.com/stat-gpt",
+    source_code_link: "",
+  },
+  {
+    name: "SKILLMATCH",
+    description: `AI Recruitment Platform – by Netixsol,
+      Led development of a smart hiring platform for HR teams. Built backend workflows enabling job posting, AI-generated assessments, and automated CV scoring based on job descriptions.`,
+    tags: [
+      {
+        name: "nextjs",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "nestjs",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "RestApi",
+        color: "green-text-gradient",
+      },
+      {
+        name: "javascript",
+        color: "green-text-gradient",
+      },
+      {
+        name: "tailwind",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "MUI",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "mongoDB",
+        color: "green-text-gradient",
+      },
+      {
+        name: "AI",
+        color: "violet-text-gradient",
+      },
+      {
+        name: "Python",
+        color: "green-text-gradient",
+      },
+    ],
+    image: skillmatch,
+    liveUrl: "https://www.skillmatch.tech",
+    source_code_link: "",
+  },
   {
     name: "Netflix Clone",
     description:

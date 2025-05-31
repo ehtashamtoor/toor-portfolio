@@ -24,6 +24,7 @@ import express from "./tech/express.png";
 import next from "./tech/nextjs-icon.svg";
 import langchainColor from "./tech/langchainColor.png";
 import FastAPI from "./tech/FastAPI.png";
+import langgraph from "./tech/langgraph.png";
 
 import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
@@ -37,6 +38,8 @@ import expenseTracker from "./projectsImages/expenseTracker.png";
 import coinflip from "./projectsImages/coinflip.png";
 import todoJS from "./projectsImages/todoJS.png";
 import netflix from "./projectsImages/Netflix.png";
+import statgpt from "./projectsImages/statgpt_image.png";
+import skillmatch from "./projectsImages/skillmatch-image.png";
 
 export {
   logo,
@@ -71,8 +74,11 @@ export {
   expenseTracker,
   coinflip,
   todoJS,
+  skillmatch,
   restaurant,
   netflix,
   langchainColor,
+  statgpt,
   FastAPI,
+  langgraph,
 };

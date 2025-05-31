@@ -54,16 +54,16 @@ const About = () => {
         //   }}
         className="mt-4 text-secondary font-[17px] max-w-3xl"
       >
-        An adept developer with expertise as a MERN developer. Driven by a love
-        for solving intricate problems, I excels in competitive environments,
-        always seeking fresh challenges to overcome.
+        An adept developer with expertise as a MERN Stack developer. Driven by a
+        love for solving intricate problems, I excels in competitive
+        environments, always seeking fresh challenges to overcome.
         <br className="block sm:hidden" />
         With a focus on delivering excellence and creating seamless user
         experiences, I am prepared to innovate and deliver exceptional
         solutions.
       </motion.p>
 
-      <div className="flex flex-wrap gap-10 mt-10 ">
+      <div className="flex flex-wrap justify-center gap-10 mt-10 ">
         {services.map((service, index) => {
           return <ServiceCard key={service.title} index={index} {...service} />;
         })}
