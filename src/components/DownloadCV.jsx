@@ -1,6 +1,5 @@
-import React from "react";
 import { Dialog } from "@headlessui/react";
-import resume from "/Professional CV Reseume.pdf";
+import resume from "/ehtasham_resume.pdf";
 import { motion } from "framer-motion";
 
 const DownloadCV = ({ isOpen, setIsOpen }) => {
@@ -28,39 +27,32 @@ const DownloadCV = ({ isOpen, setIsOpen }) => {
       opacity: 0,
     },
   };
-  const flip = {
-    hidden: {
-      transform: "scale(0) rotateX(-360deg)",
-      opacity: 0,
-      transition: {
-        delay: 0.3,
-      },
-    },
-    visible: {
-      transform: " scale(1) rotateX(0deg)",
-      opacity: 1,
-      transition: {
-        duration: 0.5,
-      },
-    },
-    exit: {
-      transform: "scale(0) rotateX(360deg)",
-      opacity: 0,
-      transition: {
-        duration: 0.5,
-      },
-    },
-  };
+  // const flip = {
+  //   hidden: {
+  //     transform: "scale(0) rotateX(-360deg)",
+  //     opacity: 0,
+  //     transition: {
+  //       delay: 0.3,
+  //     },
+  //   },
+  //   visible: {
+  //     transform: " scale(1) rotateX(0deg)",
+  //     opacity: 1,
+  //     transition: {
+  //       duration: 0.5,
+  //     },
+  //   },
+  //   exit: {
+  //     transform: "scale(0) rotateX(360deg)",
+  //     opacity: 0,
+  //     transition: {
+  //       duration: 0.5,
+  //     },
+  //   },
+  // };
   return (
-    <Dialog
-      open={isOpen}
-      onClose={() => {}}
-      className="relative z-50"
-    >
-      <div
-        className="fixed inset-0 bg-black/80"
-        aria-hidden="true"
-      />
+    <Dialog open={isOpen} onClose={() => {}} className="relative z-50">
+      <div className="fixed inset-0 bg-black/80" aria-hidden="true" />
       <motion.div
         variants={dropIn}
         initial="hidden"

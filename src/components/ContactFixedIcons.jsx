@@ -1,7 +1,7 @@
 const FixedIcons = () => {
   return (
-    <div className="md:block hidden fixed z-20 bottom-[50%] transform translate-y-[50%] left-0 lg:px-2 px-0">
-      <div className="space-y-5">
+    <div className="fixed z-20 bottom-[50%] transform translate-y-[50%] left-0 lg:px-2 px-0 mx-2">
+      <div className="space-y-3">
         <div className="bg-white text-center cursor-pointer animate-bounce flex justify-center items-center w-max max-w-[50px] max-h-[50px] p-2 rounded-full">
           <a href="mailto:ehtashamtoor50@gmail.com">
             <svg
