@@ -10,18 +10,18 @@ import {
   StarsCanvas,
 } from "./components";
 import { useEffect, useState } from "react";
-import DownloadCV from "./components/DownloadCV";
+// import DownloadCV from "./components/DownloadCV";
 import FixedIcons from "./components/ContactFixedIcons";
 import AgentChat from "./components/AgentChat";
 
 function App() {
-  let [isOpen, setIsOpen] = useState(false);
+  // let [isOpen, setIsOpen] = useState(false);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setIsOpen(true);
-    }, 40000);
-  }, []);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setIsOpen(true);
+  //   }, 40000);
+  // }, []);
   return (
     <BrowserRouter>
       <div className="relative bg-primary z-0">
@@ -30,7 +30,7 @@ function App() {
         <div className="bg-hero-pattern bg-cover bg-center bg-no-repeat">
           <Navbar />
           <Hero />
-          <DownloadCV isOpen={isOpen} setIsOpen={setIsOpen} />
+          {/* <DownloadCV isOpen={isOpen} setIsOpen={setIsOpen} /> */}
         </div>
         <About />
         <Works />
