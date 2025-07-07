@@ -1,10 +1,9 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { Tilt } from "react-tilt";
 import { styles } from "../style";
 import { services } from "../constants";
-import textVariant from "../utils/motion";
-import fadeIn from "../utils/motion";
+// import textVariant from "../utils/motion";
+// import fadeIn from "../utils/motion";
 import { SectionWrapper } from "../hoc";
 
 const ServiceCard = ({ title, index, icon }) => {
