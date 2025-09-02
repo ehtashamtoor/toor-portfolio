@@ -26,6 +26,8 @@
     "react-tilt": "^1.0.2",
     "react-ts-typewriter": "^0.1.8-b",
     "react-vertical-timeline-component": "^3.6.0",
+    "rehype-raw": "^7.0.0",
+    "streamdown": "^1.1.6",
     "three": "^0.155.0",
     "uuid": "^11.1.0"
   },

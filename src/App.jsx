@@ -9,10 +9,11 @@ import {
   Contact,
   StarsCanvas,
 } from "./components";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 // import DownloadCV from "./components/DownloadCV";
 import FixedIcons from "./components/ContactFixedIcons";
-import AgentChat from "./components/AgentChat";
+// import AgentChat from "./components/AgentChat";
+import AgentChatBox from "./components/AgentChatBox";
 
 function App() {
   // let [isOpen, setIsOpen] = useState(false);
@@ -26,7 +27,9 @@ function App() {
     <BrowserRouter>
       <div className="relative bg-primary z-0">
         <FixedIcons />
-        <AgentChat />
+        {/* <AgentChat /> */}
+        <AgentChatBox />
+
         <div className="bg-hero-pattern bg-cover bg-center bg-no-repeat">
           <Navbar />
           <Hero />

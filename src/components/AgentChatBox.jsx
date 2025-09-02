@@ -3,12 +3,12 @@
 
 import { useState, useRef, useEffect } from "react";
 import { BotMessageSquare, Send, X, Loader2 } from "lucide-react";
-import ReactMarkdown from "react-markdown";
 import { v4 as uuidv4 } from "uuid";
+import { Streamdown } from "streamdown"; // 👈 new import
 import userIcon from "/user-icon.png";
 import agentIcon from "/agentzero-icon.png";
 
-export default function ChatBot() {
+export default function AgentChatBox() {
   const [messages, setMessages] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState("");
@@ -30,70 +30,59 @@ export default function ChatBot() {
     setIsOpen(!isOpen);
   };
 
-  // Simulate bot response
-  const getBotResponse = async (userMessage, sessionId) => {
-    const apiUrl = `${import.meta.env.VITE_AGENT_API_URL}/ask-AgentZero`;
-    const response = await fetch(`${apiUrl}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        question: userMessage,
-        session_id: sessionId,
-      }),
-    });
-
-    if (response.ok) {
-      const data = await response.json();
-      return data.result || "I'm not sure how to respond to that yet.";
-    } else {
-      console.error("Failed to get a valid response:", response.statusText);
-    }
-  };
-
   const handleInputChange = (e) => {
     setInput(e.target.value);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("sessionId:", sessionId);
-
     if (input.trim() === "") return;
 
-    // Create a new message object with Human key only
-    const newMessage = {
-      Human: input,
-    };
-
-    // Add the message to the UI immediately, but without Agent response yet
-    setMessages((prevMessages) => [...prevMessages, newMessage]);
+    const newMessage = { Human: input, Agent: "" };
+    setMessages((prev) => [...prev, newMessage]);
     setInput("");
-
-    // Show typing indicator
     setIsTyping(true);
 
-    // Simulate delay for bot response
-    // setTimeout(async () => {
-    const botResponse = await getBotResponse(input, sessionId);
-    console.log("Bot response:", botResponse);
+    const apiUrl = `${import.meta.env.VITE_AGENT_API_URL}/ask-AgentZero`;
+    const eventSource = new EventSource(
+      `${apiUrl}?question=${encodeURIComponent(input)}&session_id=${sessionId}`
+    );
 
-    // Update the last message to include the Agent response
-    setMessages((prevMessages) => {
-      const updatedMessages = [...prevMessages];
-      updatedMessages[updatedMessages.length - 1] = {
-        ...updatedMessages[updatedMessages.length - 1],
-        Agent: botResponse,
-      };
-      return updatedMessages;
-    });
+    let streamedText = "";
 
-    setIsTyping(false);
-    // }, 1500);
+    eventSource.onmessage = (event) => {
+      // console.log("CHUNK:", JSON.stringify(event.data));
+      if (!event.data) return;
+
+      if (event.data === "[DONE]") {
+        eventSource.close();
+        setIsTyping(false);
+        return;
+      }
+
+      let chunk = event.data;
+      try {
+        chunk = JSON.parse(event.data); // backend is sending the chunks using json.dump.
+      } catch (e) {
+        // fallback if not JSON, will handle it here
+        console.log("response is not in json", e);
+      }
+
+      streamedText += chunk;
+
+      setMessages((prev) => {
+        const updated = [...prev];
+        updated[updated.length - 1].Agent = streamedText;
+        return updated;
+      });
+    };
+
+    eventSource.onerror = () => {
+      eventSource.close();
+      setIsTyping(false);
+    };
   };
 
-  // Custom renderer for markdown links
   // eslint-disable-next-line react/prop-types
   const MarkdownLink = ({ href, children }) => {
     return (
@@ -122,7 +111,6 @@ export default function ChatBot() {
           <X className="h-5 w-5 xs:h-6 xs:w-6 text-white-100" />
         ) : (
           <BotMessageSquare className="h-5 w-5 xs:h-6 xs:w-6 text-white-100" />
-          // <MessageSquare className="h-5 w-5 xs:h-6 xs:w-6 text-white-100" />
         )}
       </button>
 
@@ -152,8 +140,6 @@ export default function ChatBot() {
         <div className="h-80 overflow-y-auto p-4 bg-gradient-to-b from-black-200 to-black-100">
           {messages.length === 0 ? (
             <div className="flex flex-col items-center justify-center h-full text-center px-2">
-              {/* <MessageSquare className="h-10 w-10 xs:h-12 xs:w-12 text-secondary mb-2 opacity-50" /> */}
-              {/* <BotMessageSquare className="h-10 w-10 xs:h-12 xs:w-12 text-secondary mb-2 opacity-50" /> */}
               <img
                 src={agentIcon}
                 alt="AgentZero Icon"
@@ -175,50 +161,26 @@ export default function ChatBot() {
                     className="inline-block h-4 w-4 xs:h-5 xs:w-5 mr-1"
                   />
                   <div className="inline-block max-w-[85%] rounded-lg px-3 py-2 bg-tertiary text-white-100">
-                    <p className="whitespace-pre-wrap text-sm xs:text-base break-words text-left">
+                    <p className="whitespace-pre-wrap text-xs xs:text-sm break-words text-left">
                       {message.Human}
                     </p>
                   </div>
                 </div>
 
-                {/* Agent message - only show if it exists */}
+                {/* Agent message */}
                 {message.Agent && (
                   <div className="text-left">
                     <img
                       src={agentIcon}
-                      alt="User Icon"
+                      alt="Agent Icon"
                       className="inline-block h-10 w-10 mr-1"
                     />
-                    <div className="inline-block max-w-[85%] rounded-lg px-3 py-2 bg-secondary/20 text-white-100">
-                      <div className="markdown-content text-sm xs:text-base break-words">
-                        <ReactMarkdown
-                          components={{
-                            a: MarkdownLink,
-                            strong: ({ node, ...props }) => (
-                              <span className="font-bold" {...props} />
-                            ),
-                            p: ({ node, ...props }) => (
-                              <p className="mb-2" {...props} />
-                            ),
-                            ol: ({ node, ...props }) => (
-                              <ol
-                                className="list-decimal pl-5 space-y-1"
-                                {...props}
-                              />
-                            ),
-                            ul: ({ node, ...props }) => (
-                              <ul
-                                className="list-disc pl-5 space-y-1"
-                                {...props}
-                              />
-                            ),
-                            li: ({ node, ...props }) => (
-                              <li className="mb-1" {...props} />
-                            ),
-                          }}
-                        >
+                    <div className="inline-block max-w-[85%] rounded-lg px-[18px] py-2 bg-secondary/20 text-white-100">
+                      <div className="text-xs xs:text-sm break-words">
+                        {/* 👇 Streamdown handles partial markdown chunks */}
+                        <Streamdown components={{ a: MarkdownLink }}>
                           {message.Agent}
-                        </ReactMarkdown>
+                        </Streamdown>
                       </div>
                     </div>
                   </div>
@@ -226,12 +188,13 @@ export default function ChatBot() {
               </div>
             ))
           )}
+
           {isTyping && (
             <div className="text-left mb-4">
               <div className="inline-block max-w-[85%] rounded-lg px-3 py-2 bg-secondary/20 text-white-100">
                 <div className="flex items-center space-x-2">
                   <Loader2 className="h-3 w-3 xs:h-4 xs:w-4 animate-spin text-secondary" />
-                  <span className="text-sm xs:text-base">Thinking...</span>
+                  <span className="text-xs xs:text-sm">Thinking...</span>
                 </div>
               </div>
             </div>
